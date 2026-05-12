@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+</head>
+<body>
+
+<h1>Prise de Rendez-Vous Médical</h1>
+<div>
+    <div class="form-grid">
+
+        <!-- Nom complet -->
+        <div class="form-group">
+            <label for="txtNom">Nom complet</label>
+            <input type="text" id="txtNom" placeholder="Entrez le nom complet">
+            <span class="error-msg" id="errNom">Le nom est obligatoire.</span>
+        </div>
+
+        <!-- Numéro de téléphone -->
+        <div class="form-group">
+            <label for="txtTel">Numéro de téléphone</label>
+            <input type="text" id="txtTel" placeholder="Ex: 0612345678">
+            <span class="error-msg" id="errTel">Au moins 8 chiffres requis.</span>
+        </div>
+
+        <!-- Spécialité (remplie dynamiquement depuis JSON) -->
+        <div class="form-group">
+            <label for="sltSpecialite">Spécialité</label>
+            <select id="sltSpecialite">
+                <option value="">-- Choisissez une spécialité --</option>
+            </select>
+            <span class="error-msg" id="errSpec">Veuillez choisir une spécialité.</span>
+        </div>
+
+        <!-- Date du rendez-vous -->
+        <div class="form-group">
+            <label for="txtDate">Date du rendez-vous</label>
+            <input type="date" id="txtDate">
+            <span class="error-msg" id="errDate">La date doit être aujourd'hui ou dans le futur.</span>
+        </div>
+
+        <!-- Bouton Ajouter -->
+        <button class="btn-add" id="btn_ajouter">Ajouter le rendez-vous</button>
+
+    </div>
+</div>
+
+<!-- ════════════════ RECHERCHE ════════════════ -->
+<div class="search-bar">
+    <input type="text" id="txtChercher" placeholder="Rechercher par nom ou spécialité...">
+</div>
+
+<!-- ════════════════ TABLEAU ════════════════ -->
+<div class="table-wrapper">
+    <div class="table-title">Liste des rendez-vous</div>
+    <table id="table_rdv">
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Téléphone</th>
+                <th>Spécialité</th>
+                <th>Date</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="tdata"></tbody>
+    </table>
+</div>
+
+<!-- Le fichier JS est chargé à la fin du body pour s'assurer
+     que tous les éléments HTML existent avant que le script s'exécute -->
+<script src="script.js"></script>
+
+</body>
+</html>
